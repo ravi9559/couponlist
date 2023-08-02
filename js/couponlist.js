@@ -1,7 +1,8 @@
 
 
 const url = "https://sdwebau.shopainternal.com/json/aaa_productlist.json";
-const hostUrl = "http://127.0.0.1:5500/";
+
+const hostUrl  = window.location.origin;
 
 async function fetchJsonData() {
   try {
@@ -17,12 +18,12 @@ async function fetchJsonData() {
     data.forEach(function (data) {
       const li = document.createElement("li");
       const a = document.createElement("a");
-      const couponUrl = `${hostUrl}couponexpand.html?productName=${encodeURIComponent(
+      const couponUrl = `${hostUrl}/couponexpand.html?productName=${encodeURIComponent(
         data.ProductName
       )}`;
 
       if (data.ProductName.includes("/coupon")) {
-        a.href = "http://127.0.0.1:5500/couponlist.html";
+        a.href = `${hostUrl}/couponlist.html`;
         a.textContent =
           data.ProductId + "-" + data.Advertiser + " - " + data.Headline;
       } else {
