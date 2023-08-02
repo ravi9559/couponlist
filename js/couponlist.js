@@ -18,7 +18,7 @@ async function fetchJsonData() {
     data.forEach(function (data) {
       const li = document.createElement("li");
       const a = document.createElement("a");
-      const couponUrl = `${hostUrl}/couponexpand.html?productName=${encodeURIComponent(
+      const couponUrl = `${hostUrl}/couponlist/couponexpand.html?productName=${encodeURIComponent(
         data.ProductName
       )}`;
 
